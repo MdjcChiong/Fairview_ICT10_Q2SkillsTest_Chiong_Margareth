@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Non-Metal Elements</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://pyscript.net/releases/2026.7.3/core.css">
+    <script type="module" src="https://pyscript.net/releases/2026.7.3/core.js"></script>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            font-family: Arial, sans-serif;
+            background:
+                radial-gradient(ellipse at 15% 20%, #e5fff4 0%, transparent 40%),
+                radial-gradient(ellipse at 85% 25%, #dcf9ff 0%, transparent 40%),
+                radial-gradient(ellipse at 50% 80%, #fffde0 0%, transparent 55%),
+                #fffde7;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 40px 20px;
+            color: #111;
+        }
+
+        .page {
+            width: 100%;
+            max-width: 850px;
+            text-align: center;
+        }
+
+        h1 {
+            font-family: 'Anton', Impact, sans-serif;
+            font-size: clamp(28px, 4vw, 38px);
+            font-weight: normal;
+            margin: 0 0 8px;
+        }
+
+        .subtitle {
+            font-size: clamp(18px, 2.5vw, 25px);
+            margin: 0 0 40px;
+        }
+
+        .form-box {
+            background: #e2faf5;
+            border: 12px solid #663000;
+            border-radius: 36px;
+            padding: 55px 26px 30px;
+            width: 100%;
+            max-width: 785px;
+            margin: 0 auto;
+        }
+
+        .form-box input {
+            display: block;
+            width: 100%;
+            height: 60px;
+            border: none;
+            border-radius: 19px;
+            padding: 0 18px;
+            margin-bottom: 25px;
+            font-family: Arial, sans-serif;
+            font-size: 23px;
+            background: white;
+            box-shadow: 0 12px 15px rgba(0, 0, 0, 0.23);
+            outline: none;
+        }
+
+        .form-box input:focus {
+            box-shadow: 0 0 0 3px #bd8c56, 0 12px 15px rgba(0, 0, 0, 0.18);
+        }
+
+        .form-box button {
+            display: block;
+            width: 230px;
+            max-width: 100%;
+            height: 75px;
+            margin: 35px auto 0;
+            background: #663000;
+            color: white;
+            border: none;
+            border-radius: 19px;
+            font-family: 'Anton', Impact, sans-serif;
+            font-size: 29px;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .form-box button:hover {
+            background: #854516;
+            transform: translateY(-2px);
+        }
+
+        #result {
+            max-width: 520px;
+            margin: 35px auto 0;
+            font-size: 21px;
+            line-height: 1.8;
+            overflow-wrap: anywhere;
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 30px 16px;
+            }
+
+            .subtitle {
+                margin-bottom: 30px;
+            }
+
+            .form-box {
+                border-width: 8px;
+                border-radius: 28px;
+                padding: 35px 16px 25px;
+            }
+
+            .form-box input {
+                font-size: 18px;
+                height: 55px;
+            }
+
+            .form-box button {
+                margin-top: 25px;
+                height: 65px;
+                font-size: 25px;
+            }
+
+            #result {
+                margin-top: 30px;
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <main class="page">
+
+        <h1>Non-Metal Elements</h1>
+        <p class="subtitle">Periodic Table Information Finder</p>
+
+        <div class="form-box">
+
+            <input
+                type="text"
+                id="symbol"
+                placeholder="Enter element symbol (e.g., O)"
+                aria-label="Element Symbol"
+            >
+
+            <button py-click="verify_nonmetal">Check Details</button>
+
+        </div>
+
+        <p id="result" aria-live="polite"></p>
+
+    </main>
+
+    <script type="py" src="./main.py"></script>
+</body>
+</html>
+
